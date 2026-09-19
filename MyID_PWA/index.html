@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta name="description" content="Учебное мобильное приложение с цифровыми документами">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <title>MyID — документы</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Цифровые документы</div>
+        <h1>Мои документы</h1>
+      </div>
+      <button class="avatar" aria-label="Профиль" onclick="showProfile()">А</button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-top">
+        <span class="status-dot"></span>
+        <span>Документы доступны</span>
+      </div>
+      <h2>Всё важное<br>в одном месте</h2>
+      <p>Учебный макет мобильного приложения.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h3>Документы</h3>
+        <span>2</span>
+      </div>
+
+      <button class="document-card passport" onclick="openDocument('ID-карта')">
+        <div class="doc-logo">ID</div>
+        <div class="doc-info">
+          <small>Удостоверение личности</small>
+          <strong>Артём Ульянов</strong>
+          <span>№ 0000 0000</span>
+        </div>
+        <span class="arrow">›</span>
+      </button>
+
+      <button class="document-card driver" onclick="openDocument('Водительское удостоверение')">
+        <div class="doc-logo">🚗</div>
+        <div class="doc-info">
+          <small>Водительское удостоверение</small>
+          <strong>Артём Ульянов</strong>
+          <span>Категория B</span>
+        </div>
+        <span class="arrow">›</span>
+      </button>
+    </section>
+
+    <section class="quick">
+      <button onclick="showQR()"><span>▣</span><b>Мой QR-код</b><small>Для демонстрации</small></button>
+      <button onclick="showProfile()"><span>●</span><b>Профиль</b><small>Личные данные</small></button>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="active"><span>▦</span>Документы</button>
+      <button onclick="showProfile()"><span>●</span>Профиль</button>
+    </nav>
+  </main>
+
+  <div id="modal" class="modal hidden" onclick="closeModal(event)">
+    <div class="sheet" onclick="event.stopPropagation()">
+      <button class="close" onclick="hideModal()">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
